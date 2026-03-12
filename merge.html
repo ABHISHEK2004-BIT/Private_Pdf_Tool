@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta charset="UTF-8">
+<title>Merge PDF</title>
+
+<link rel="stylesheet" href="css/tool.css">
+
+<!-- load pdf-lib from CDN with a local fallback in case the CDN script
+     can't be fetched (e.g. when the page is opened using file://).  Place a copy
+     of pdf-lib.min.js in js/ if you need offline support. -->
+<script src="https://unpkg.com/pdf-lib/dist/pdf-lib.min.js" onerror="this.onerror=null;this.src='js/pdf-lib.min.js'"></script>
+
+</head>
+
+<body>
+
+<div class="workspace">
+
+<div class="left">
+
+<div class="drop">
+
+<input type="file" id="files" multiple accept="application/pdf">
+
+<p>Drag & Drop PDF or Click</p>
+
+</div>
+
+<div id="preview" class="preview"></div>
+
+</div>
+
+
+<div class="right">
+
+<h2>Merge PDF</h2>
+
+<p class="info">Drag and drop files to reorder them.</p>
+
+<button onclick="mergePDF()" class="action">Merge PDF</button>
+
+</div>
+
+</div>
+
+<script src="js/merge.js"></script>
+
+</body>
+</html>

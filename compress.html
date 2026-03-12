@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta charset="UTF-8">
+<title>Compress PDF</title>
+
+<link rel="stylesheet" href="css/tool.css">
+
+<!-- load pdf-lib from CDN; if that fails (for example when opening the page via file://)
+     fall back to a local copy stored in js/pdf-lib.min.js.  You can download the
+     library from https://unpkg.com/pdf-lib/dist/pdf-lib.min.js and save it to that
+     path.  Serving the page over HTTP (python -m http.server) usually avoids
+     cross‑origin blocks altogether. -->
+<script src="https://unpkg.com/pdf-lib/dist/pdf-lib.min.js" onerror="this.onerror=null;this.src='js/pdf-lib.min.js'"></script>
+
+</head>
+
+<body>
+
+<div class="workspace">
+
+<div class="left">
+
+<input type="file" id="file" accept="application/pdf">
+
+<div id="preview"></div>
+
+</div>
+
+
+<div class="right">
+
+<h2>Compress PDF</h2>
+
+<p id="sizeInfo"></p>
+
+<button onclick="compressPDF()" class="action">Compress PDF</button>
+
+</div>
+
+</div>
+
+<script src="js/compress.js"></script>
+
+</body>
+</html>
